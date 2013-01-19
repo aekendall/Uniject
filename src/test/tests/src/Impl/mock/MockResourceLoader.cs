@@ -17,7 +17,7 @@ namespace Tests {
 
         private string resourcesPath = Path.GetFullPath("../../../../Assets/resources");
         private IKernel kernel;
-        private static List<string> knownExtensions = new List<string>() { ".ogg", ".wav", ".mat", ".mp3", ".physicMaterial" };
+        private static List<string> knownExtensions = new List<string>() { ".ogg", ".wav", ".mat", ".mp3", ".physicMaterial", ".png" };
 
         public MockResourceLoader(IKernel kernel) {
             this.kernel = kernel;

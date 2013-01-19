@@ -30,6 +30,7 @@ namespace Tests {
             Rebind<IResourceLoader>().To<MockResourceLoader>().InSingletonScope();
             Rebind<TestableGameObject>().To<FakeGameObject>().InScope(Scoping.GameObjectBoundaryScoper);
             Rebind<ITransform>().To<FakeGameObject.FakeTransform>().InScope(Scoping.GameObjectBoundaryScoper);
+            Rebind<ITexture2D>().ToProvider<MockProvider<ITexture2D>>().InScope(Scoping.GameObjectBoundaryScoper);
 
             Bind<TestUpdatableManager>().ToSelf().InSingletonScope();
 

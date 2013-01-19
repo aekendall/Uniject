@@ -61,6 +61,7 @@
      <Compile Include="Assets\Plugins\Uniject\Interface\IRigidBody.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\IScreen.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ISphereCollider.cs" />
+     <Compile Include="Assets\Plugins\Uniject\Interface\ITexture2D.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ITime.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\ITransform.cs" />
      <Compile Include="Assets\Plugins\Uniject\Interface\IUtil.cs" />
@@ -100,6 +101,7 @@
      <Compile Include="Assets\Plugins\Uniject\impl\UnityRigidBody.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityScreen.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnitySphereCollider.cs" />
+     <Compile Include="Assets\Plugins\Uniject\impl\UnityTexture2D.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityTime.cs" />
      <Compile Include="Assets\Plugins\Uniject\impl\UnityTransform.cs" />
      <None Include="Assets\resources\xml\test.xml" />

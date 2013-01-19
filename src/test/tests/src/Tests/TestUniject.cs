@@ -122,8 +122,7 @@ namespace Tests {
                 mockCallback.Verify(c => c.OnConstructor(), Times.Once());
                 mockCallback.Verify(c => c.OnStart(), Times.Once());
             });
-
-            kernel.Bind<IStartUpdateCallback>().ToMethod(context => mockCallback.Object);
+            kernel.Bind<IStartUpdateCallback>().ToConstant(mockCallback.Object);
             HasStartUpdateCallback component = kernel.Get<HasStartUpdateCallback>();
             step();
         }
@@ -229,6 +228,24 @@ namespace Tests {
             Assert.IsNotNull(injected.injectedScreen);
             IScreen screen = kernel.Get<IScreen>();
             Assert.AreEqual(screen, injected.injectedScreen);
+        }
+
+        [GameObjectBoundary]
+        public class HasInjectedTexture2D : TestableComponent {
+            public ITexture2D texture2D { get; private set; }
+            public HasInjectedTexture2D(TestableGameObject obj, [Resource("textures/cursor")] ITexture2D texture) : base(obj) {
+                    texture2D = texture;
+            }
+        }
+
+        /// <summary>
+        /// Texture2D resources are injected
+        /// </summary>
+        [Test]
+        public void testTexture2DIsInjected() {
+            HasInjectedTexture2D component = kernel.Get<HasInjectedTexture2D>();
+            Assert.IsNotNull(component);
+            Assert.IsNotNull(component.texture2D);
         }
 
         private class HasAttributedAudioClip {
